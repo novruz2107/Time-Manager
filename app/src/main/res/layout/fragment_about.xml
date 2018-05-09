@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:orientation="vertical"
+              android:layout_width="match_parent"
+                android:background="#d1c8c6"
+              android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/about_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:title="About"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:textSize="15dp"
+        android:textColor="#111"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:text="@string/about"
+        android:layout_below="@+id/about_toolbar"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_us"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentStart="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/textView4">
+
+        <ImageView
+            android:id="@+id/facebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textView4"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/facebook"/>
+
+        <ImageView
+            android:id="@+id/instagram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/facebook"
+            android:layout_weight="1"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/instagram"/>
+
+        <ImageView
+            android:id="@+id/twitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/instagram"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/instagram"
+            app:srcCompat="@drawable/twitter"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView9"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/learn_more"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView4"/>
+
+
+</RelativeLayout>

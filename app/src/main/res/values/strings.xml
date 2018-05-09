@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Time Manager</string>
+    <string name="options">Options</string>
+    <string name="user_preferences">User preferences</string>
+    <string name="notif_in_stat_bar">Notification in status bar</string>
+    <string name="analog_timer">Keep screen on</string>
+    <string name="select_alarm_sound">Sound options</string>
+    <string name="change_sound">Select alarm sound:</string>
+    <string name="tick_sound">Select ongoing sound:</string>
+    <string name="set_custom_times">Set custom times (in minutes)</string>
+    <string name="pomodoro">Pomodoro</string>
+    <string name="short_break">Short break</string>
+    <string name="long_break">Long break</string>
+    <string name="save_and_return">Save and return</string>
+    <string name="restart">Restart</string>
+    <string name="pause">Pause</string>
+    <string name="intro_words">Please, set the custom work and break time below:</string>
+    <string name="choose_lang">Choose the language</string>
+    <string name="long_click_hint">To restart pomodoro timer, hold about 3 seconds</string>
+    <string name="about">Timer Manager app has been developed by Ant Technologies created by Baku Higher Oil School students.
+    The aim of the application is helping users focus on their work and preventing further distraction. Worldwide popular Pomodoro
+    technique was utilized to perform that goal. According to Pomodoro method, work is divided into intervals that comprise traditionally
+    25 minutes and separated by normally 5 minutes short breaks.</string>
+    <string name="contact_us">Contact us:</string>
+    <string name="learn_more"><a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Learn more..</a></string>
+    <string name="sent1">Get back to your work.</string>
+    <string name="sent2">Go offline.</string>
+    <string name="sent3">Focus on your work.</string>
+    <string name="sent4">Dreams don’t work unless you do.</string>
+    <string name="sent5">When you play, play hard; when you work, don’t play at all.</string>
+    <string name="sent6">Most people give up when they are about to achieve success.</string>
+    <string name="sent7">You’re never a loser until you quit trying.</string>
+    <string name="sent8">Someday is not a day of the week.</string>
+    <string name="sent9">Strive for progress, not perfection.</string>
+    <string name="sent10">One day you will thank yourself for never giving up.</string>
+    <string name="sen1">Get yourself a cup of coffee.</string>
+    <string name="sen2">Relax.</string>
+    <string name="sen3">It is your break time.</string>
+    <string name="open">Opened.</string>
+    <string name="close">Closed.</string>
+    <string name="about_drawer">About</string>
+    <string name="settings_drawer">Settings</string>
+</resources>
