@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,8 +31,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewSwitcher;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
 
 import java.util.Random;
@@ -65,9 +68,11 @@ public class MainActivity extends AppCompatActivity {
     static int counterForBreak=-1;
     Random random;
     TextSwitcher forWork;
-    private AdView myAdView;
+//    private AdView myAdView;
     private NotificationCompat.Builder notificationBuilder;
     private Notification notification;
+//    private InterstitialAd mInterstitialAd;
+    Typeface typeface;
 
 
     @Override
@@ -104,22 +109,28 @@ public class MainActivity extends AppCompatActivity {
         startService(new Intent(getBaseContext(), AppService.class));
         //////////////////////
 
-        //ADs section
-        MobileAds.initialize(this, "ca-app-pub-5977142818330521~1943995775");
-        myAdView = (AdView) findViewById(R.id.adView);
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                AdRequest adRequest = new AdRequest.Builder().build();
-                myAdView.loadAd(adRequest);
-            }
-        }, 5000);
+//        //ADs section
+//        MobileAds.initialize(this, "ca-app-pub-5977142818330521~1943995775");
+//        myAdView = (AdView) findViewById(R.id.adView);
+//
+//        mInterstitialAd = new InterstitialAd(this);
+//        mInterstitialAd.setAdUnitId("ca-app-pub-5977142818330521/9216164252");
+//        final Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                AdRequest adRequest = new AdRequest.Builder().build();
+//                myAdView.loadAd(adRequest);
+//                mInterstitialAd.loadAd(new AdRequest.Builder().build());
+//            }
+//        }, 5000);
 
+        typeface = Typeface.createFromAsset(getAssets(), "fonts/sofiapro-light.otf");
 
         ////////////////
         textView = (TextView) findViewById(R.id.textView);
         textView.setBackgroundColor(Color.GRAY);
+//        textView.setTypeface(typeface);
         Pause = (Button) findViewById(R.id.pause);
         restartButton = (FloatingActionButton) findViewById(R.id.restart);
         alarm1 = MediaPlayer.create(this, R.raw.alarm1);
@@ -142,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 TextView myText = new TextView(MainActivity.this);
                 myText.setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL);
                 myText.setTextSize(25);
+                myText.setTypeface(typeface);
                 myText.setTextColor(Color.argb(255, 208, 208, 208));
                 return myText;
             }
@@ -175,8 +187,6 @@ public class MainActivity extends AppCompatActivity {
                     backupTime = milliSecondsUntilDone;
                     counter++;
                     showSentences();
-//                Log.i("pox", String.valueOf(((Long.valueOf(milliSecondsUntilDone).floatValue())/(Long.valueOf(targetTimeInMilliSeconds)).floatValue())));
-//                ring = new Ring(getApplicationContext(), ((Long.valueOf(milliSecondsUntilDone).floatValue())/(Long.valueOf(targetTimeInMilliSeconds).floatValue())*360));
 
             }
 
@@ -262,11 +272,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 counter=-1; counterForBreak=-1;
-                finish();
-                mNotifyMgr.cancelAll();
-                stopTick(selectedTick);
-                cancelAllTimers();
-                startActivity(new Intent(MainActivity.this, FirstActivity.class));
+//                if (mInterstitialAd.isLoaded()) {
+//                    mInterstitialAd.show();
+//                } else {
+                    finish();
+                    mNotifyMgr.cancelAll();
+                    stopTick(selectedTick);
+                    cancelAllTimers();
+                    startActivity(new Intent(MainActivity.this, FirstActivity.class));
+//                }
+
                 return true;
             }
         });
@@ -278,6 +293,38 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+
+//        mInterstitialAd.setAdListener(new AdListener() {
+//            @Override
+//            public void onAdLoaded() {
+//                // Code to be executed when an ad finishes loading.
+//            }
+//
+//            @Override
+//            public void onAdFailedToLoad(int errorCode) {
+//                // Code to be executed when an ad request fails.
+//            }
+//
+//            @Override
+//            public void onAdOpened() {
+//                // Code to be executed when the ad is displayed.
+//            }
+//
+//            @Override
+//            public void onAdLeftApplication() {
+//                // Code to be executed when the user has left the app.
+//            }
+//
+//            @Override
+//            public void onAdClosed() {
+//                finish();
+//                mNotifyMgr.cancelAll();
+//                stopTick(selectedTick);
+//                cancelAllTimers();
+//                startActivity(new Intent(MainActivity.this, FirstActivity.class));
+//            }
+//        });
 
 
     }

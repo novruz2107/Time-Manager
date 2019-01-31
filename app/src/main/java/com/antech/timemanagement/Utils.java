@@ -5,30 +5,23 @@ package com.antech.timemanagement;
  */
 
 import android.content.Context;
-        import android.annotation.TargetApi;
-        import android.content.Context;
 import android.content.ContextWrapper;
-import android.content.SharedPreferences;
-        import android.content.res.Configuration;
-        import android.content.res.Resources;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Paint;
 import android.os.Build;
-        import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.lang.reflect.Field;
 import java.util.Locale;
 
 public class Utils {
+
+
+
 
     public static ContextWrapper changeLang(Context context, String lang_code){
 

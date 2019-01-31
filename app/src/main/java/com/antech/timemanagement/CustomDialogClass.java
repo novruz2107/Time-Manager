@@ -4,17 +4,11 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageButton;
-
-import static android.R.attr.y;
-import static android.R.string.no;
-import static android.R.string.yes;
 
 /**
  * Created by Novruz Engineer on 4/2/2018.
@@ -26,6 +20,7 @@ public class CustomDialogClass extends Dialog {
     public static boolean quit=false;
     public Dialog d;
     public ImageButton az, en;
+    public static String lang_code;
 
     DialogListener listener;
 
@@ -60,7 +55,7 @@ public class CustomDialogClass extends Dialog {
                 if (listener != null)
                     listener.onCompleted();
                 CustomDialogClass.this.dismiss();
-                editor.putString("number7", "az");
+                lang_code = "az";
             }
         });
 
@@ -79,7 +74,7 @@ public class CustomDialogClass extends Dialog {
                 if (listener != null)
                     listener.onCompleted();
                 CustomDialogClass.this.dismiss();
-                editor.putString("number7", "en");
+                lang_code = "en";
             }
         });
 
@@ -97,21 +92,4 @@ public class CustomDialogClass extends Dialog {
     public void setDialogListener(DialogListener listener) {
         this.listener = listener;
     }
-
-
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.az:
-//                Utils.writeToFile("25 5 12 true 1 false az false", getContext());
-//                notify();
-//                break;
-//            case R.id.en:
-//                Utils.writeToFile("25 5 12 true 1 false en false", getContext());
-//                notify();
-//                break;
-//            default:
-//                break;
-//        }
-//    }
 }

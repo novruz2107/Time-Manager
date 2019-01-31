@@ -119,6 +119,16 @@
                     android:onClick="handleFlagEn"
                     android:scaleType="fitCenter"
                     app:srcCompat="@drawable/flag_en"/>
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/flag_ru"
+                    android:background="@null"
+                    android:onClick="handleFlagRu"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ru"
+                    android:layout_marginLeft="20dp"/>
             </LinearLayout>
 
             <View

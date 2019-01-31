@@ -1,12 +1,15 @@
 package com.antech.timemanagement;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -15,15 +18,17 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
@@ -37,7 +42,7 @@ public class FirstActivity extends AppCompatActivity {
 
     Boolean detailFragmentActive = false;
     SoundPool sp;
-    ImageButton button;
+    Button button;
     String lang_code;
     View layout;
     NumberPicker np_pomodoro;
@@ -47,12 +52,17 @@ public class FirstActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle toolbarDrawerToggle;
     SettingsActivity frag;
+    Typeface typeface;
+    TextView toolbar_title;
+    TextView welcome, t6, t7, t8;
+    Context c;
 
     @Override
     protected void attachBaseContext(Context newBase) {
         SharedPreferences prefs = newBase.getSharedPreferences("Files", MODE_PRIVATE);
         lang_code = prefs.getString("number7", "en");
         Context context = Utils.changeLang(newBase, lang_code);
+        c=this;
         super.attachBaseContext(context);
     }
 
@@ -65,15 +75,25 @@ public class FirstActivity extends AppCompatActivity {
         setContentView(R.layout.activity_first);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         frag = new SettingsActivity();
-        myToolbar.setTitleTextColor(Color.WHITE);
-        myToolbar.setBackgroundColor(Color.parseColor("#000000"));
+        myToolbar.setTitleTextColor(Color.BLACK);
+        myToolbar.setBackgroundColor(Color.parseColor("#64ACC4"));
         toolbarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, myToolbar, R.string.open, R.string.close);
         setSupportActionBar(myToolbar);
         ActionBar actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
         actionbar.setTitle("Time Manager");
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        typeface = Typeface.createFromAsset(getAssets(), "fonts/sofiapro-light.otf");
+        toolbar_title = (TextView) findViewById(R.id.toolbar_title);
+        toolbar_title.setTypeface(typeface);
+
+        //
+        welcome = (TextView) findViewById(R.id.welcomeTextView);
+        t6 = (TextView) findViewById(R.id.textView6);
+        t7 =(TextView) findViewById(R.id.textView7);
+        t8 = (TextView) findViewById(R.id.textView8);
+        welcome.setTypeface(typeface);t6.setTypeface(typeface);t7.setTypeface(typeface);t8.setTypeface(typeface);
 
         SharedPreferences prefs = getSharedPreferences(SettingsActivity.DATAS, MODE_PRIVATE);
         //Navigation listener:
@@ -109,6 +129,25 @@ public class FirstActivity extends AppCompatActivity {
                                 fragmentTransaction.addToBackStack(null);
                                 fragmentTransaction.commit();
                             }break;
+                            case R.id.Rate:{
+                                final AlertDialog builder = new AlertDialog.Builder(FirstActivity.this).create();
+                                builder.setTitle(R.string.dialog_title);
+                                builder.setMessage(c.getString(R.string.dialog_message));
+                                builder.setButton(AlertDialog.BUTTON_POSITIVE , c.getString(R.string.dialog_positive), new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.antech.timemanagement"));
+                                                startActivity(intent);
+                                                builder.cancel();
+                                            }
+                                        });
+                                builder.setButton(AlertDialog.BUTTON_NEGATIVE, c.getString(R.string.dialog_negative), new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                builder.cancel();
+                                            }
+                                        });
+                                builder.setIcon(R.drawable.rate_icon);
+                                builder.show();
+                            }
                         }
 
 
@@ -118,9 +157,9 @@ public class FirstActivity extends AppCompatActivity {
 
         ////////////////////////////////
 
-
         layout = findViewById(R.id.frame_layout);
-        button = (ImageButton) findViewById(R.id.button);
+        button = (Button) findViewById(R.id.button);
+        button.setTypeface(typeface);
         np_pomodoro = (NumberPicker) findViewById(R.id.np_pomodoro);
         np_pomodoro.setMinValue(1);
         np_pomodoro.setMaxValue(60);

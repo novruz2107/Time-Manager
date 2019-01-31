@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Time Manager</string>
+    <string name="options">Опции</string>
+    <string name="user_preferences">Пользовательские настройки</string>
+    <string name="notif_in_stat_bar">Уведомление в строке состояния</string>
+    <string name="analog_timer">Оставьте экран включенным</string>
+    <string name="select_alarm_sound">Параметры звука</string>
+    <string name="change_sound">Выберите звуковой сигнал:</string>
+    <string name="tick_sound">Выберите текущий звук:</string>
+    <string name="set_custom_times">Установка пользовательского времени (в минутах).</string>
+    <string name="pomodoro">Помодоро</string>
+    <string name="short_break">Короткий перерыв</string>
+    <string name="long_break">Долгий перерыв</string>
+    <string name="save_and_return">Сохранить и вернуть</string>
+    <string name="restart">Перезапуск</string>
+    <string name="pause">Пауза</string>
+    <string name="intro_words">Пожалуйста, установите пользовательскую работу и время перерыва ниже:</string>
+    <string name="choose_lang">Выберите язык</string>
+    <string name="long_click_hint">Чтобы перезапустить таймер помодоро, удерживайте около 3 секунд</string>
+    <string name="about">Приложение Time Manager было разработано Ant Technologies, созданным студентами Бакинской Высшей Школы Нефти. Цель этого приложения помочь ползователям концентрироваться на их работе и не позволять им в дальнейшем отвлекаться на разные факторы. Всемирноизвестная техника Pomidoro была создана для того чтобы добиться этой цели. Согласно методу Pomidoro, работа разделена на интервалы которые составляют 25 минут и деляться на  пятиминутные короткие перерывы.</string>
+    <string name="contact_us">Свяжитесь с нами:</string>
+    <string name="learn_more"><a href="https://en.wikipedia.org/wiki/Pomodoro_Technique">Выучить больше..</a></string>
+    <string name="sent1">Вернитесь к своей работе.</string>
+    <string name="sent2">Перейдите в режим оффлайн.</string>
+    <string name="sent3">Сосредоточьтесь на своей работе.</string>
+    <string name="sent4">Мечты не будут работать, если вы не будете.</string>
+    <string name="sent5">Когда вы играете, играйте тяжело; когда вы работаете, не играйте вообще.</string>
+    <string name="sent6">Большинство людей сдаются, когда они почти добились успеха.</string>
+    <string name="sent7">Вы никогда не проиграете, пока не прекратите попытки.</string>
+    <string name="sent8">Когда-нибудь это не день недели.</string>
+    <string name="sent9">Стремитесь к прогрессу, а не к совершенству.</string>
+    <string name="sent10">Однажды вы будете благодарить себя за то, что никогда не сдавались.</string>
+    <string name="sen1">Выпейте себе чашку кофе.</string>
+    <string name="sen2">Расслабьтесь.</string>
+    <string name="sen3">Это ваше время перерыва.</string>
+    <string name="open">Opened.</string>
+    <string name="close">Closed.</string>
+    <string name="about_drawer">О приложении</string>
+    <string name="settings_drawer">Настройки</string>
+    <string name="rate">Оцените нас</string>
+    <string name="dialog_title">Оцените нас</string>
+    <string name="dialog_message">Вам нравится приложение?</string>
+    <string name="dialog_positive">Я хочу оценить!</string>
+    <string name="dialog_negative">Нет, назад..</string>
+</resources>

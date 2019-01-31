@@ -18,7 +18,7 @@
     <string name="intro_words">Zəhmət olmasa, iş və fasilə vaxtını tənzimləyin:</string>
     <string name="choose_lang">Dili seçin</string>
     <string name="long_click_hint">Pomodoro taymeri sıfırlamaq üçün 3 saniyə basılı saxlayın</string>
-    <string name="about">Timer Manager tətbiqi Bakı Ali Neft Məktəbinin texno parkı olan "Ant Technologies" tərəfindən yaradılmışdır.
+    <string name="about">Timer Manager tətbiqi Bakı Ali Neft Məktəbi tələbələrinin startupı olan "Ant Technologies" tərəfindən yaradılmışdır.
     Tətbiqin əsas məqsədi istifadəçini müəyyən işə fokuslandırmaq və işdən yayınmağın qarşısını almaqdır. Bu məqsədi yerinə yetirmək üçün dünyaca
         məşhur olan Pomodoro üsulundan istifadə olunur. Pomodoro üsuluna görə, ümumi iş müddəti normal olaraq 25 dəqiqəlik intervallara bölünür və bu
         intervallar bir birindən 5 və 12 dəqiqəlik fasilələrlə ayrılır.</string>
@@ -41,5 +41,10 @@
     <string name="close">Closed.</string>
     <string name="about_drawer">Haqqında</string>
     <string name="settings_drawer">Tənzimləmələr</string>
+    <string name="rate">Qiymətləndir</string>
+    <string name="dialog_title">Qiymətləndir</string>
+    <string name="dialog_message">Proqramı bəyənirsən?</string>
+    <string name="dialog_positive">Bəli, qiymətləndir</string>
+    <string name="dialog_negative">Xeyr, qayıt..</string>
 
 </resources>

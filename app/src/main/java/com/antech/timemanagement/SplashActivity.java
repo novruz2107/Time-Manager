@@ -1,24 +1,12 @@
 package com.antech.timemanagement;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageButton;
-import android.widget.Toast;
-
-import static android.os.Build.VERSION_CODES.M;
-import static com.antech.timemanagement.CustomDialogClass.quit;
 
 /**
  * Created by Novruz Engineer on 4/1/2018.
@@ -27,7 +15,7 @@ import static com.antech.timemanagement.CustomDialogClass.quit;
 public class SplashActivity extends Activity {
 
     private static String TAG = SplashActivity.class.getName();
-    private static long SLEEP_TIME = 2;    // Time in seconds to show the picture
+    private static long SLEEP_TIME = 1;    // Time in seconds to show the picture
     private boolean isFirst;
     public CustomDialogClass cdd;
     Intent intent;
@@ -73,45 +61,49 @@ public class SplashActivity extends Activity {
 
 //             Start main activity
             final Intent intent = new Intent(SplashActivity.this, FirstActivity.class);
-            SharedPreferences prefs = getSharedPreferences("Files", MODE_PRIVATE);
+            final SharedPreferences prefs = getSharedPreferences("Files", MODE_PRIVATE);
+            final SharedPreferences.Editor editor = prefs.edit();
             isFirst=prefs.getBoolean("number8", true);
-            if(isFirst){
-
-                new Thread()
-                {
-                    public void run()
-                    {
-                        SplashActivity.this.runOnUiThread(new Runnable()
-                        {
+//            if(isFirst){
 //
-                            public void run()
-                            {
-                                cdd.setDialogListener(new CustomDialogClass.DialogListener() {
-                                    @Override
-                                    public void onCompleted() {
-                                        startActivity(intent);
-                                        finish();
-                                    }
-
-                                    @Override
-                                    public void onCanceled() {
-
-                                    }
-                                });
-                                cdd.show();
-
-                            }
-                        });
-
-                    }
-                }.start();
-
-
-            }
-            if(!isFirst){
+//                new Thread()
+//                {
+//                    public void run()
+//                    {
+//                        SplashActivity.this.runOnUiThread(new Runnable()
+//                        {
+////
+//                            public void run()
+//                            {
+//                                cdd.setDialogListener(new CustomDialogClass.DialogListener() {
+//                                    @Override
+//                                    public void onCompleted() {
+//                                        startActivity(intent);
+//                                        editor.putBoolean("number8", false);
+//                                        editor.putString("number7", CustomDialogClass.lang_code);
+//                                        editor.apply();
+//                                        finish();
+//                                    }
+//
+//                                    @Override
+//                                    public void onCanceled() {
+//
+//                                    }
+//                                });
+//                                cdd.show();
+//
+//                            }
+//                        });
+//
+//                    }
+//                }.start();
+//
+//
+//            }
+//            if(!isFirst){
                 SplashActivity.this.startActivity(intent);
                 SplashActivity.this.finish();
-            }
+//            }
 
 
         }

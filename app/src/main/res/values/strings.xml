@@ -40,4 +40,9 @@
     <string name="close">Closed.</string>
     <string name="about_drawer">About</string>
     <string name="settings_drawer">Settings</string>
+    <string name="rate">Rate us</string>
+    <string name="dialog_title">Rate us</string>
+    <string name="dialog_message">Do you enjoy the app?</string>
+    <string name="dialog_positive">I want to rate!</string>
+    <string name="dialog_negative">Nope, return..</string>
 </resources>

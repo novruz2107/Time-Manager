@@ -12,6 +12,12 @@
             android:icon="@drawable/ic_info"
             android:title="@string/about_drawer"/>
 
+        <item
+            android:id="@+id/Rate"
+            android:title="@string/rate"
+            android:icon="@drawable/rate_icon"
+            />
+
 
     </group>
 

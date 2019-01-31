@@ -10,11 +10,6 @@ import android.os.CountDownTimer;
 import android.util.AttributeSet;
 import android.view.View;
 
-import static android.R.attr.width;
-import static android.R.attr.x;
-import static android.R.attr.y;
-import static android.os.Build.VERSION_CODES.M;
-
 /**
  * Created by Novruz Engineer on 4/22/2018.
  */
@@ -58,11 +53,11 @@ public class Ring extends View {
 
 
 
-        mPaint.setColor(Color.GREEN);
+        mPaint.setColor(Color.argb(255, 115, 242, 49));
         paint1.setColor(Color.GRAY);
         paint2.setColor(Color.GRAY);
         paint3.setColor(Color.GRAY);
-        center_paint.setColor(Color.argb(255, 208, 208, 208));
+        center_paint.setColor(Color.argb(255, 100, 172, 196));
         init();
 
 
@@ -166,9 +161,9 @@ public class Ring extends View {
         float height = y+MainActivity.textView.getWidth()+80;
         canvas.drawArc(x, y, width, height, -90, angle, true, mPaint);
         canvas.drawArc(x+10, y+10, width-10, height-10, 0, 360, true, center_paint);
-        canvas.drawCircle((MainActivity.textView.getX()+MainActivity.textView.getWidth()/2)-40, 950, 10, paint1);
-        canvas.drawCircle((MainActivity.textView.getX()+MainActivity.textView.getWidth()/2), 950, 10, paint2);
-        canvas.drawCircle((MainActivity.textView.getX()+MainActivity.textView.getWidth()/2)+40, 950, 10, paint3);
+        canvas.drawRect((MainActivity.textView.getX()+MainActivity.textView.getWidth()/2)-40, MainActivity.textView.getY()+MainActivity.textView.getHeight()+200, 20+(MainActivity.textView.getX()+MainActivity.textView.getWidth()/2)-40, 7+MainActivity.textView.getY()+MainActivity.textView.getHeight()+200, paint1);
+        canvas.drawRect((MainActivity.textView.getX()+MainActivity.textView.getWidth()/2), MainActivity.textView.getY()+MainActivity.textView.getHeight()+200, 20+(MainActivity.textView.getX()+MainActivity.textView.getWidth()/2), 7+MainActivity.textView.getY()+MainActivity.textView.getHeight()+200, paint2);
+        canvas.drawRect((MainActivity.textView.getX()+MainActivity.textView.getWidth()/2)+40, MainActivity.textView.getY()+MainActivity.textView.getHeight()+200, 20+(MainActivity.textView.getX()+MainActivity.textView.getWidth()/2)+40, 7+MainActivity.textView.getY()+MainActivity.textView.getHeight()+200, paint3);
     }
 
     public void setAngle(float angle) {

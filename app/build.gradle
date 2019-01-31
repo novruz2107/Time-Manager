@@ -1,14 +1,22 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        myKeyStore {
+            keyAlias 'myKeyStore'
+            keyPassword 'advarcel0'
+            storeFile file('C:/Users/Novruz Engineer/Desktop/myKeyStore.jks')
+            storePassword 'advarcel0'
+        }
+    }
     compileSdkVersion 26
     buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "com.antech.timemanagement"
         minSdkVersion 21
         targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "v4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -26,7 +34,6 @@ dependencies {
     })
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.google.android.gms:play-services-ads:11.0.4'
-
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:design:25.3.1'

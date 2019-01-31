@@ -3,19 +3,20 @@
 
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:http="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:http="http://schemas.android.com/apk/res-auto"
-    android:background="#120f0d"
+    android:background="@drawable/appbckgrnd"
     tools:context="com.antech.timemanagement.MainActivity">
+
     <view
 
         class="com.antech.timemanagement.Ring"
         id="@+id/ring_view"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"/>
 
     <Button
         android:id="@+id/pause"
@@ -35,41 +36,42 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:10"
-        android:textSize="70dp"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:text="00:10"
+        android:textSize="70dp"/>
 
 
     <TextSwitcher
         android:id="@+id/forWork"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="25dp"/>
 
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-5977142818330521/2715642652">
-    </com.google.android.gms.ads.AdView>
+    <!--<com.google.android.gms.ads.AdView-->
+        <!--xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+        <!--android:id="@+id/adView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--ads:adSize="SMART_BANNER"-->
+        <!--ads:adUnitId="ca-app-pub-5977142818330521/2715642652">-->
+    <!--</com.google.android.gms.ads.AdView>-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/restart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/pause"
-        android:layout_alignEnd="@+id/adView"
-        android:layout_alignRight="@+id/adView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:baselineAlignBottom="false"
         android:clickable="true"
-        http:backgroundTint="@android:color/holo_green_light"
+
+        http:backgroundTint="#FF6569"
         http:fabSize="normal"
         http:srcCompat="@android:drawable/ic_lock_power_off"/>
 

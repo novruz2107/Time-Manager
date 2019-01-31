@@ -29,20 +29,22 @@ public class SettingsActivity extends Fragment {
     Spinner alarmList;
     Spinner alarmList2;
     static long pomodoroTime;
-    static long shortBreakTime;
-    static long longBreakTime;
-    static String isMarked;
-    String datas[];
     List<String> alarms;
     List<String> ticks;
     String selectedAlarm;
     String selectedTick;
     Switch analogOrDigital;
-    String switchPosition;
     ImageButton flag_en;
     ImageButton flag_az;
+    ImageButton flag_ru;
     String lang_code;
     public static final String DATAS = "Files";
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        this.onCreate(null);
+    }
 
 
     @Override
@@ -62,6 +64,7 @@ public class SettingsActivity extends Fragment {
         analogOrDigital = (Switch) v.findViewById(R.id.switch1);
         flag_az = (ImageButton) v.findViewById(R.id.flag_az);
         flag_en = (ImageButton) v.findViewById(R.id.flag_en);
+        flag_ru = (ImageButton) v.findViewById(R.id.flag_ru);
         alarms = new ArrayList<>();
         ticks = new ArrayList<>();
         alarms.add(0, "Alarm 1");
@@ -138,11 +141,14 @@ public class SettingsActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 flag_en.setAlpha(0.3f);
+                flag_ru.setAlpha(0.3f);
                 flag_az.setAlpha(1f);
                 flag_az.setScaleX(1.2f);
                 flag_az.setScaleY(1.2f);
                 flag_en.setScaleX(1f);
                 flag_en.setScaleY(1f);
+                flag_ru.setScaleX(1f);
+                flag_ru.setScaleY(1f);
                 lang_code="az";
             }
         });
@@ -151,12 +157,31 @@ public class SettingsActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 flag_az.setAlpha(0.3f);
+                flag_ru.setAlpha(0.3f);
                 flag_en.setAlpha(1f);
                 flag_en.setScaleX(1.2f);
                 flag_en.setScaleY(1.2f);
                 flag_az.setScaleX(1f);
                 flag_az.setScaleY(1f);
+                flag_ru.setScaleX(1f);
+                flag_ru.setScaleY(1f);
                 lang_code="en";
+            }
+        });
+
+        flag_ru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flag_az.setAlpha(0.3f);
+                flag_en.setAlpha(0.3f);
+                flag_ru.setAlpha(1f);
+                flag_ru.setScaleX(1.2f);
+                flag_ru.setScaleY(1.2f);
+                flag_az.setScaleX(1f);
+                flag_az.setScaleY(1f);
+                flag_en.setScaleX(1f);
+                flag_en.setScaleY(1f);
+                lang_code="ru";
             }
         });
 

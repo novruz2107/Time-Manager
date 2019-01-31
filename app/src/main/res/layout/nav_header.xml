@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="192dp"
-              android:background="?attr/colorPrimaryDark"
+              android:background="@drawable/cover"
               android:padding="16dp"
               android:theme="@style/FragmentDialogStyle"
               android:orientation="vertical"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Pomodoro Time Manager"
         android:textSize="20dp"
-        android:textColor="#fff"
+        android:textColor="#000"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"/>
 
 </LinearLayout>
